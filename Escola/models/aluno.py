@@ -5,7 +5,7 @@ class aluno:
         self.matricula = matricula
         self.idade = idade
         self.turma = turma
-        print(nome,matricula,idade,turma)
+        
 
 
 #Nome, matricula

@@ -5,7 +5,6 @@ class nota:
         self.nota_portugues = nota_portugues
         self.nota_historia = nota_historia
 
-        print(nota_matematica,nota_portugues,nota_historia)
     
 
 
