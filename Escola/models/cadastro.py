@@ -2,6 +2,7 @@ from utils.helpers import tentar_converter_para_int
 from models.aluno import aluno
 from models.nota import nota
 import json
+import os
 
 caminho =  'Escola/data/base_alunos.json'
 instancia_classe_aluno = aluno
@@ -18,7 +19,9 @@ class cadastro:
         if cadastro_ou_nao == 1:
             matricula = tentar_converter_para_int(input("Para confirmarmos sua identidade, digite sua matricula:\n"),"Matrícula")
             self.Verificar_Matricula(matricula)
-    
+        elif cadastro_ou_nao == 2:
+            self.criar_login() #lista para armazenar as infos e passar para construtores
+
     def Verificar_Matricula(self,matricula):
        
         matricula_valida = False
@@ -48,13 +51,18 @@ class cadastro:
                     print(1)#Criar função de realizar cadastro
                 else:
                     print(2)
-                    
+
+    def criar_login (self):#,nome,matricula,idade,turma):
+       caminhoCompleto = "C:/Users/gamer/Downloads/Sistema de Análise de Desempenho Escolar/Escola/data/teste.json"
+       nova_info = {"matricula":0,"nome":"","idade":"","turma":""}
+       listaInfo = list(input("Digite, nesta ordem, seu nome, turma, idade e matrícula. Em uma mesma linha, separados por espaço em branco:\n").split(" "))
+       listaIdadeMatricula = [int(listaInfo[x]) for x in range(2,len(listaInfo))]
+       nova_info.update({"matricula": listaIdadeMatricula[1],"nome" : listaInfo[0],"idade":listaIdadeMatricula[0],"turma":listaInfo[1]})
+       with open(caminhoCompleto,"a",encoding="utf-8") as arquivo:
+           json.dump(nova_info,arquivo,indent=4, ensure_ascii=False)
+
+
+
 instancia_cadastro = cadastro
 
 
-    
-
-# elif Cadastrado_ou_nao == 2:
-#     print("3w")
-# else:
-#     print("3w")
