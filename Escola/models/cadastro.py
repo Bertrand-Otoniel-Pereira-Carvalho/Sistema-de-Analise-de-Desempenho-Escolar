@@ -43,23 +43,35 @@ class cadastro:
             
             if matricula_valida == False:
                 acao_que_usuario_deseja = 0
-                acao_que_usuario_deseja = tentar_converter_para_int(input(("Sua matrícula não foi encontrada em nosso banco de dados.\n[1] Gostaria de tentar novamente\n[2] Gostaria de criar meu login\n\nDigite apenas o número correspondente: ")),"Valor")
+                acao_que_usuario_deseja = tentar_converter_para_int(input(("\nSua matrícula não foi encontrada em nosso banco de dados.\n[1] Gostaria de tentar novamente\n[2] Gostaria de criar meu login\n\nDigite apenas o número correspondente: ")),"Valor")
                 if acao_que_usuario_deseja == 1:
                     matricula_valida = True
                     self.Verificar_Matricula(tentar_converter_para_int(input("Digite sua matrícula: "),"Matrícula"))
                 elif acao_que_usuario_deseja ==2:
-                    print(1)#Criar função de realizar cadastro
+                    matricula_valida = True
+                    self.criar_login()
                 else:
-                    print(2)
+                    print("Valor digitado é inválido, tente novamente.")
 
     def criar_login (self):#,nome,matricula,idade,turma):
-       caminhoCompleto = "C:/Users/gamer/Downloads/Sistema de Análise de Desempenho Escolar/Escola/data/teste.json"
+       caminhoCompleto = "C:/Users/gamer/Downloads/Sistema de Análise de Desempenho Escolar/Escola/data/base_alunos.json"
        nova_info = {"matricula":0,"nome":"","idade":"","turma":""}
        listaInfo = list(input("Digite, nesta ordem, seu nome, turma, idade e matrícula. Em uma mesma linha, separados por espaço em branco:\n").split(" "))
        listaIdadeMatricula = [int(listaInfo[x]) for x in range(2,len(listaInfo))]
        nova_info.update({"matricula": listaIdadeMatricula[1],"nome" : listaInfo[0],"idade":listaIdadeMatricula[0],"turma":listaInfo[1]})
-       with open(caminhoCompleto,"a",encoding="utf-8") as arquivo:
-           json.dump(nova_info,arquivo,indent=4, ensure_ascii=False)
+       if os.path.exists(caminhoCompleto):
+            with open(caminhoCompleto, "r", encoding="utf-8") as arquivo:
+                try:
+                    dados = json.load(arquivo)
+                except json.JSONDecodeError:
+                    dados = []
+       else:
+            dados = []
+        # Adiciona a nova entrada
+       dados.append(nova_info)
+        # Sobrescreve o arquivo com a lista atualizada
+       with open(caminhoCompleto, "w", encoding="utf-8") as arquivo:
+             json.dump(dados, arquivo, indent=4, ensure_ascii=False)
 
 
 

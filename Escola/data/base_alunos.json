@@ -1,35 +1,95 @@
 [
     {
-      "matricula": 123,
-      "nome": "Ana Souza",
-      "idade": 16,
-      "turma": "2A",
-      "notas": {
-        "Matemática": [8.5, 7.0, 9.0],
-        "Português": [9.0, 8.5, 8.0],
-        "História": [7.0, 6.5, 8.0]
-      }
+        "matricula": 123,
+        "nome": "Ana Souza",
+        "idade": 16,
+        "turma": "2A",
+        "notas": {
+            "Matemática": [
+                8.5,
+                7.0,
+                9.0
+            ],
+            "Português": [
+                9.0,
+                8.5,
+                8.0
+            ],
+            "História": [
+                7.0,
+                6.5,
+                8.0
+            ]
+        }
     },
     {
-      "matricula": 124,
-      "nome": "Carlos Lima",
-      "idade": 17,
-      "turma": "2A",
-      "notas": {
-        "Matemática": [6.0, 5.5, 7.0],
-        "Português": [7.5, 7.0, 6.5],
-        "História": [8.0, 8.0, 9.0]
-      }
+        "matricula": 124,
+        "nome": "Carlos Lima",
+        "idade": 17,
+        "turma": "2A",
+        "notas": {
+            "Matemática": [
+                6.0,
+                5.5,
+                7.0
+            ],
+            "Português": [
+                7.5,
+                7.0,
+                6.5
+            ],
+            "História": [
+                8.0,
+                8.0,
+                9.0
+            ]
+        }
     },
     {
-      "matricula": 125,
-      "nome": "Juliana Ribeiro",
-      "idade": 16,
-      "turma": "2B",
-      "notas": {
-        "Matemática": [9.0, 9.5, 10.0],
-        "Português": [8.5, 9.0, 9.0],
-        "História": [7.5, 8.5, 8.0]
-      }
+        "matricula": 125,
+        "nome": "Juliana Ribeiro",
+        "idade": 16,
+        "turma": "2B",
+        "notas": {
+            "Matemática": [
+                9.0,
+                9.5,
+                10.0
+            ],
+            "Português": [
+                8.5,
+                9.0,
+                9.0
+            ],
+            "História": [
+                7.5,
+                8.5,
+                8.0
+            ]
+        }
+    },
+    {
+        "matricula": 1231,
+        "nome": "Bertrand",
+        "idade": 13,
+        "turma": "H7"
+    },
+    {
+        "matricula": 123,
+        "nome": "wefwef",
+        "idade": 23,
+        "turma": "&hqe"
+    },
+    {
+        "matricula": 1312,
+        "nome": "Bert",
+        "idade": 12,
+        "turma": "7h"
+    },
+    {
+        "matricula": 12312,
+        "nome": "Bert",
+        "idade": 1232,
+        "turma": "87H"
     }
 ]
