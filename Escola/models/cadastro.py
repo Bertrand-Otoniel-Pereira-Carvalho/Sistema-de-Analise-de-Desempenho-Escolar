@@ -9,11 +9,11 @@ caminho =  'Escola/data/base_alunos.json'
 with open (caminho, 'r', encoding='utf-8') as arquivo:
     alunos = json.load(arquivo)
 
-instancia_classe_aluno = aluno()
-instancia_classe_nota = nota()
+
 
 matricula = 0
 class cadastro:
+
        
     def __init__(self,cadastro_ou_nao):
         self.cadastro_ou_nao = cadastro_ou_nao
@@ -24,7 +24,6 @@ class cadastro:
             self.criar_login() #lista para armazenar as infos e passar para construtores
 
     def Verificar_Matricula(self,matricula):
-       
         matricula_valida = False
         while matricula_valida == False:
            
@@ -34,10 +33,10 @@ class cadastro:
                     matricula_valida = True
                     
                     #Armazenando informações deste aluno no arquivo/classe aluno
-                    
-                    instancia_classe_aluno.registrar_aluno(nome=_matricula['nome'],matricula=_matricula['matricula'],idade=_matricula['idade'],turma=_matricula['turma'])
+        
+                    self.instancia_classe_aluno = aluno(nome=_matricula['nome'],matricula=_matricula['matricula'],idade=_matricula['idade'],turma=_matricula['turma'])
                     #Armazenando informações deste aluno no arquivo/classe nota
-                    instancia_classe_nota.notas(nota_matematica=_matricula['notas']['Matemática'],nota_portugues=_matricula['notas']['Português'],nota_historia=_matricula['notas']['História']) 
+                    self.instancia_classe_nota = nota(nota_matematica=_matricula['notas']['Matemática'],nota_portugues=_matricula['notas']['Português'],nota_historia=_matricula['notas']['História']) 
                     break
             
             if matricula_valida == False:
@@ -52,7 +51,7 @@ class cadastro:
                 else:
                     print("Valor digitado é inválido, tente novamente.")
 
-    def criar_login (self):#,nome,matricula,idade,turma):
+    def criar_login (self):
        caminhoCompleto = "C:/Users/gamer/Downloads/Sistema de Análise de Desempenho Escolar/Escola/data/base_alunos.json"
        nova_info = {"matricula":0,"nome":"","idade":"","turma":""}
        listaInfo = list(input("Digite, nesta ordem, seu nome, turma, idade e matrícula. Em uma mesma linha, separados por espaço em branco:\n").split(" "))
@@ -71,6 +70,14 @@ class cadastro:
         # Sobrescreve o arquivo com a lista atualizada
        with open(caminhoCompleto, "w", encoding="utf-8") as arquivo:
              json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+    
+    def retornar_instancias_nota_aluno(self):
+        return self.instancia_classe_nota.retornar_notas_simples()
+    
+    def retornar_dados_aluno(self):
+        return self.instancia_classe_aluno.retornar_dados_aluno()
+    
+    
 
 
 

@@ -2,11 +2,14 @@ class aluno:
 
    # def __init__ (self):
      
-    def registrar_aluno (self,nome, matricula,idade,turma):
+    def __init__ (self,nome, matricula,idade,turma):
         self.nome = nome
         self.matricula = matricula
         self.idade = idade
         self.turma = turma
+    
+    def retornar_dados_aluno(self):
+        return self.nome,self.matricula,self.idade,self.turma
         
 
 

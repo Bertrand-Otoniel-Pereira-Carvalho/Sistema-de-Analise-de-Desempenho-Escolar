@@ -1,27 +1,35 @@
 class nota:
 
-    def notas (self,nota_matematica,nota_portugues,nota_historia): #__init__
+    def __init__ (self,nota_matematica,nota_portugues,nota_historia):
         self.nota_matematica = nota_matematica
         self.nota_portugues = nota_portugues
         self.nota_historia = nota_historia
         
-    
-   # def vizualizar_notas_simples (self):
-     #   print(self.nota_historia)
+    def retornar_notas_simples (self):
+        return self.nota_matematica,self.nota_portugues,self.nota_historia
 
-    def media_materia (self,materia,nota):
+    def media_materia (self,nota):
         self.nota = nota
-        self.materia = materia
         contador = 0
+        acumulador_notas = 0
         for i in nota:
-            acumulador_notas = i
+            acumulador_notas = acumulador_notas+i
             contador +=1
         media = acumulador_notas/contador
         return media
+
+    def boletim_completo(self):
+        self.media_historia = self.media_materia(self.nota_historia)
+        self.media_matematica = self.media_materia(self.nota_matematica)
+        self.media_portugues = self.media_materia(self.nota_portugues)
+        print("\n","Matéria\tNotas por bimestre\tMédia\n","Matemática\t",self.nota_matematica,f"\t{(round(self.media_matematica,2))}","\n","Português\t",self.nota_portugues,f"\t{(round(self.media_portugues,2))}""\n","História\t",self.nota_historia,f"\t{(round(self.media_historia,2))}")
+
+
     
     #def media_global (self): args e kargs ??
     
 
-
-
-# disciplina e valor
+# [1] Boletim Completo 
+# [2] Média por disciplina 
+# [3] Média global 
+# [4] Aprovações/Reprovações
