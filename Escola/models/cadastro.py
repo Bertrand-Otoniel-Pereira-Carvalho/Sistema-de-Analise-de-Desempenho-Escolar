@@ -5,15 +5,16 @@ import json
 import os
 
 caminho =  'Escola/data/base_alunos.json'
-instancia_classe_aluno = aluno
-instancia_classe_nota = nota
 
 with open (caminho, 'r', encoding='utf-8') as arquivo:
     alunos = json.load(arquivo)
 
+instancia_classe_aluno = aluno()
+instancia_classe_nota = nota()
+
 matricula = 0
 class cadastro:
-    
+       
     def __init__(self,cadastro_ou_nao):
         self.cadastro_ou_nao = cadastro_ou_nao
         if cadastro_ou_nao == 1:
@@ -33,12 +34,10 @@ class cadastro:
                     matricula_valida = True
                     
                     #Armazenando informações deste aluno no arquivo/classe aluno
-
-                    instancia_classe_aluno(nome=_matricula['nome'],matricula=_matricula['matricula'],idade=_matricula['idade'],turma=_matricula['turma'])
-
+                    
+                    instancia_classe_aluno.registrar_aluno(nome=_matricula['nome'],matricula=_matricula['matricula'],idade=_matricula['idade'],turma=_matricula['turma'])
                     #Armazenando informações deste aluno no arquivo/classe nota
-
-                    instancia_classe_nota(nota_matematica=_matricula['notas']['Matemática'],nota_portugues=_matricula['notas']['Português'],nota_historia=_matricula['notas']['História'])
+                    instancia_classe_nota.notas(nota_matematica=_matricula['notas']['Matemática'],nota_portugues=_matricula['notas']['Português'],nota_historia=_matricula['notas']['História']) 
                     break
             
             if matricula_valida == False:

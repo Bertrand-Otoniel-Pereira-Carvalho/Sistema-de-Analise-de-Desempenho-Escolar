@@ -1,10 +1,14 @@
 class nota:
 
-    def __init__ (self,nota_matematica,nota_portugues,nota_historia):
+    def notas (self,nota_matematica,nota_portugues,nota_historia): #__init__
         self.nota_matematica = nota_matematica
         self.nota_portugues = nota_portugues
         self.nota_historia = nota_historia
+        
     
+   # def vizualizar_notas_simples (self):
+     #   print(self.nota_historia)
+
     def media_materia (self,materia,nota):
         self.nota = nota
         self.materia = materia
