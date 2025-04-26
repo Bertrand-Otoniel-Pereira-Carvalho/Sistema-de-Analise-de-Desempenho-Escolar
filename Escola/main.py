@@ -26,7 +26,7 @@ Dados_aluno = instancia_classe_cadastro.retornar_dados_aluno() # Nome, matricula
 instancia_classe_nota = nota(Notas[0],Notas[1],Notas[2]) 
 instancia_classe_aluno = aluno(Dados_aluno[0],Dados_aluno[1],Dados_aluno[2],Dados_aluno[3])
 
-time.sleep(0.01)
+time.sleep(0.01) # Colocar 3 seg dps
 os.system("cls")
 topico_principal = input(f"{Dados_aluno[0]}, qual tópico deseja abordar?\n\n[1] Notas\n[2] Aulas\n\n")
 match topico_principal:
@@ -37,7 +37,7 @@ match topico_principal:
             case "1":
                 instancia_classe_nota.boletim_completo()
             case "2":
-               print(instancia_classe_nota.media_materia(Notas[0]))
+               instancia_classe_nota.exibe_medias()
             case "3":
                 print("j")
             case "4":

@@ -22,7 +22,13 @@ class nota:
         self.media_historia = self.media_materia(self.nota_historia)
         self.media_matematica = self.media_materia(self.nota_matematica)
         self.media_portugues = self.media_materia(self.nota_portugues)
-        print("\n","Matéria\tNotas por bimestre\tMédia\n","Matemática\t",self.nota_matematica,f"\t{(round(self.media_matematica,2))}","\n","Português\t",self.nota_portugues,f"\t{(round(self.media_portugues,2))}""\n","História\t",self.nota_historia,f"\t{(round(self.media_historia,2))}")
+        print("\n\t\tBoletim Completo\n\n","Matéria\tNotas por bimestre\tMédia\n","Matemática\t",self.nota_matematica,f"\t{(round(self.media_matematica,2))}","\n","Português\t",self.nota_portugues,f"\t{(round(self.media_portugues,2))}""\n","História\t",self.nota_historia,f"\t{(round(self.media_historia,2))}")
+
+    def exibe_medias(self):
+        self.media_historia = self.media_materia(self.nota_historia)
+        self.media_matematica = self.media_materia(self.nota_matematica)
+        self.media_portugues = self.media_materia(self.nota_portugues)
+        print(f"\nMédia em matemática: {round(self.media_matematica,2)}\nMédia em português: {round(self.media_portugues)}\nMédia em história: {round(self.media_historia,2)}") 
 
 
     
