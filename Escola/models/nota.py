@@ -19,7 +19,7 @@ class nota:
         return media
 
     def boletim_completo(self):
-        self.media_historia = self.media_materia(self.nota_historia)# Arrumar para não repetir isso tanto vezes
+        self.media_historia = self.media_materia(self.nota_historia)# Arrumar para não repetir isso tanto vezes shiuo
         self.media_matematica = self.media_materia(self.nota_matematica)# Arrumar para não repetir isso tanto vezes
         self.media_portugues = self.media_materia(self.nota_portugues)# Arrumar para não repetir isso tanto vezes
         print("\n\t\tBoletim Completo\n\n","Matéria\tNotas por bimestre\tMédia\n","Matemática\t",self.nota_matematica,f"\t{(round(self.media_matematica,2))}","\n","Português\t",self.nota_portugues,f"\t{(round(self.media_portugues,2))}""\n","História\t",self.nota_historia,f"\t{(round(self.media_historia,2))}")
